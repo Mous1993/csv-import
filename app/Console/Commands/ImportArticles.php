@@ -3,8 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use App\Imports\ArticlesImport;
-use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Controllers\ArticlesController;
 
 class ImportArticles extends Command
 {
@@ -37,6 +36,7 @@ class ImportArticles extends Command
      */
     public function handle()
     {
-        Excel::import(new ArticlesImport, storage_path('articles.csv'));
+        $csv = new  ArticlesController();
+        $csv->import(); 
     }
 }

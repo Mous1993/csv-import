@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ArticlesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,5 +15,3 @@ use App\Http\Controllers\ArticlesController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/articles', [ArticlesController::class, 'import'])->name('import');

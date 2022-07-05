@@ -5,9 +5,13 @@ namespace App\Imports;
 use App\Models\Article;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
+use Maatwebsite\Excel\Concerns\SkipsErrors;
+use Maatwebsite\Excel\Concerns\Importable;
+use Maatwebsite\Excel\Concerns\SkipsOnError;
 
-class ArticlesImport implements ToModel, WithHeadingRow
+class ArticlesImport implements ToModel, WithHeadingRow, SkipsOnError
 {
+    use Importable, SkipsErrors;
     /**
     * @param array $row
     *
